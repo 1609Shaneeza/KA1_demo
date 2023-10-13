@@ -1,0 +1,28 @@
+.flex-container{
+    display:flex;
+
+}
+
+.Colour-Container{
+    padding: 20px;
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.red-container{
+    background-color: crimson;
+}
+
+.blue-container{
+    background-color: dodgerblue
+}
+
+button{
+    width:30%;
+    font-size: 15px;
+}
+
+p{
+    font-size: 15px;
+}
