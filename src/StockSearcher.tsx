@@ -2,6 +2,7 @@ import { FormEvent } from "react"
 
 function StockSearcher() {
     const handleClick = async(e: FormEvent) => {
+        e.preventDefault();
 
     }
 
