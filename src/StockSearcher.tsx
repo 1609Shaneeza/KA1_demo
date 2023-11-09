@@ -7,16 +7,27 @@ function StockSearcher() {
     const handleClick = async(e: FormEvent) => {
         e.preventDefault();
 
-        const params = {
+        const alphaVantageParams = {
             function: "TIME_SERIES_INTRADAY",
             symbol: stockcode,
             interval: "5min",
-            apiKey:"UK6ZNP3MKPAOFNZG"
+            apikey:"UK6ZNP3MKPAOFNZG"
         };
 
-        const response = await axios.get("", {
+        try{
+        const response = await axios.get("https://www.alphavantage.co/query", {
             params: alphaVantageParams     
         });
+        console.log(response.data);
+
+        const timeSeries = response?.data["Time Series (5min)"];
+        if (timeSeries) {
+            const latestTime = Object.keys(timeSeries)[0];
+            console.log(latestTime);
+        } else{
+            throw Error("Invalid Response Format");
+        }
+    }catch (error) {}
     };
 
     return(

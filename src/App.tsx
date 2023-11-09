@@ -1,8 +1,9 @@
-
+import StockSearcher from "./StockSearcher"
 function App() {
 
   return (
     <>
+    <StockSearcher/>
     </>
   )
 }
