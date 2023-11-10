@@ -12,31 +12,25 @@ function Music() {
         setErrorMessage("");
 
         const options = {
-            method: 'POST',
+            method: 'GET',
+            url:'https://google-search72.p.rapidapi.com/search',
             params: {
-                image: 'Bernie_I_Am_Once_Again_Asking_For_Your_Support',
-                // api_key:  "dc6zaTOxFJmzC",
-
+                q: 'word cup',
+                gl: 'us',
+                lr: 'lang_en',
+                num: '10',
+                start: '0'
             },
             headers: {
-                'content-type': 'application/json',
                 'X-RapidAPI-Key': 'f1fa39c5a1mshd7d4aeda7438503p1fc874jsna8801761a6c2',
-                'X-RapidAPI-Host': 'meme-generator-and-template-database.p.rapidapi.com'
-            }
+                'X-RapidAPI-Host': 'google-search72.p.rapidapi.com'
+            },
 
         };
 
         try {
-            const response = await axios.get('https://meme-generator-and-template-database.p.rapidapi.com/template/Bernie_I_Am_Once_Again_Asking_For_Your_Support',{
-                params: options,
-            });   
-            const timeSeries = response?.data["Meme(10)"]
-            if (timeSeries) {
-                const latestTime = Object.keys(timeSeries)[0];
-                setMusicV(timeSeries[latestTime]["4.close"]);           
-            } else{
-                throw Error("Invalid Response Format")
-            }
+            const response = await axios.request(options)
+            console.log(response.data)
         } catch (error) {
             setErrorMessage(String(error));
         }
@@ -45,15 +39,15 @@ function Music() {
     return(
         <>
         <form onSubmit={handleClick}>
-            <label htmlFor="RAndom">Random memes</label>
+            <label htmlFor="RAndom">Searches</label>
             <input
             type="text"
-            id="VRandom"
+            id="searches"
             autoComplete="off"
             onChange={(e) => setMValue(e.target.value)}
             value={music}
             />
-            <button>Generate Meme</button>
+            <button>Generate</button>
         </form>
         </>
     )
