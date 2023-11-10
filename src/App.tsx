@@ -1,9 +1,9 @@
-import StockSearcher from "./StockSearcher"
+import Music from "./Music";
 function App() {
 
   return (
     <>
-    <StockSearcher/>
+    <Music/>
     </>
   )
 }
