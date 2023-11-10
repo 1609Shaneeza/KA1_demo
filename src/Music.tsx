@@ -13,17 +13,14 @@ function Music() {
 
         const options = {
             method: 'GET',
-            url:'https://google-search72.p.rapidapi.com/search',
+            url:'https://youtube-search13.p.rapidapi.com/YouTube/Videos/Search',
             params: {
-                q: 'word cup',
-                gl: 'us',
-                lr: 'lang_en',
-                num: '10',
-                start: '0'
+                query: 'mrbeast',
+                page: '1'
             },
             headers: {
                 'X-RapidAPI-Key': 'f1fa39c5a1mshd7d4aeda7438503p1fc874jsna8801761a6c2',
-                'X-RapidAPI-Host': 'google-search72.p.rapidapi.com'
+                'X-RapidAPI-Host': 'youtube-search13.p.rapidapi.com'
             },
 
         };
@@ -39,7 +36,7 @@ function Music() {
     return(
         <>
         <form onSubmit={handleClick}>
-            <label htmlFor="RAndom">Searches</label>
+            <label htmlFor="RAndom">YouTube</label>
             <input
             type="text"
             id="searches"
