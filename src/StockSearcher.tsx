@@ -23,7 +23,8 @@ function StockSearcher() {
         const timeSeries = response?.data["Time Series (5min)"];
         if (timeSeries) {
             const latestTime = Object.keys(timeSeries)[0];
-            console.log(latestTime);
+            const stockValue = (timeSeries[latestTime]["4. close"])
+            console.log(stockValue);
         } else{
             throw Error("Invalid Response Format");
         }
