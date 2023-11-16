@@ -26,6 +26,7 @@ function NameForm() {
              <button type="submit">Submit</button>
         </form>
         <p>Local name is {localName}</p>
+        <p>Global Name is {nameContext?.name}</p>
         
         </>
     )

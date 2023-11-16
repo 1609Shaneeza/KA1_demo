@@ -1,5 +1,6 @@
+import { useContext } from "react";
 import NameForm from "./NameForm";
-import NameProvider from "./NameProvider";
+import NameProvider, { NameContext } from "./NameProvider";
 
 
 function App() {
