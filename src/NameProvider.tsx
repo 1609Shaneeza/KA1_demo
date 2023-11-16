@@ -4,7 +4,7 @@ interface NameContextType {
     name: string,
     setName: (name:string) => void;
 }
-const NameContext = createContext<NameContextType | null>(null);
+export const NameContext = createContext<NameContextType | null>(null);
 
 function NameProvider({ children }: {children: ReactNode}){
     const [name, setName] = useState("");
@@ -16,3 +16,5 @@ function NameProvider({ children }: {children: ReactNode}){
     )
 
 }
+
+export default NameProvider;

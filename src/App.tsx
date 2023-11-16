@@ -1,10 +1,16 @@
-import ColourCounter from "./components/ColourCounter";
+import NameForm from "./NameForm";
+import NameProvider from "./NameProvider";
+
 
 function App() {
 
   return (
     <>
-    <ColourCounter />
+    <NameProvider>
+      <h1>Hello World!</h1>
+      <NameForm />
+    </NameProvider>
+    
     </>
   )
 }
