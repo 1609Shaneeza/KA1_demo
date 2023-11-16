@@ -13,15 +13,7 @@ function Music() {
 
         const options = {
             method: 'GET',
-            url:'https://youtube-search13.p.rapidapi.com/YouTube/Videos/Search',
-            params: {
-                query: 'mrbeast',
-                page: '1'
-            },
-            headers: {
-                'X-RapidAPI-Key': 'f1fa39c5a1mshd7d4aeda7438503p1fc874jsna8801761a6c2',
-                'X-RapidAPI-Host': 'youtube-search13.p.rapidapi.com'
-            },
+            url: 'https://dog.ceo/api/breeds/image/random',
 
         };
 
@@ -36,7 +28,7 @@ function Music() {
     return(
         <>
         <form onSubmit={handleClick}>
-            <label htmlFor="RAndom">YouTube</label>
+            <label htmlFor="RAndom">Random dogs</label>
             <input
             type="text"
             id="searches"
