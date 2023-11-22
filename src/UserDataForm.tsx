@@ -1,5 +1,5 @@
 import { FormEvent, useContext, useState } from "react";
-import { NameContext } from "./UserDataProvider";
+import { AddressContext, AgeContext, NameContext } from "./UserDataProvider";
 
 
 function userDataForm() {
@@ -7,10 +7,14 @@ function userDataForm() {
     const [localAge, setLocalAge] = useState("");
     const [localAddress, setLocalAddress] = useState("");
     const nameContext = useContext(NameContext);
+    const ageContext = useContext(AgeContext);
+    const addressContext = useContext(AddressContext);
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         nameContext?.setName(localName);
+        ageContext?.setAge(localAge);
+        addressContext?.setAddress(localAddress)
         setLocalName("");
         setLocalAge("");
         setLocalAddress("");
