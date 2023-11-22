@@ -1,37 +1,25 @@
 import { ReactNode, createContext, useState } from "react";
+import UserData from "../interfaces/UserData";
+import useUserData from "../hooks/useUserData";
 
 
-interface NameContextType {
-    name: string;
-    setName: (name: string) => void;
+interface UserDataContextType {
+    userdata: UserData;
+    setUserData: (userData: UserData | {}) => void; 
 }
 
-interface AgeContextType {
-    age: string;
-    setAge: (age: string) => void;
-}
-interface AddressContextType {
-    address: string;
-    setAddress: (address: string) => void;
-}
+export const UserDataContext = createContext<UserDataContextType | null>(null);
 
-export const NameContext = createContext<NameContextType | null>(null);
-export const AgeContext = createContext<AgeContextType | null>(null);
-export const AddressContext = createContext<AddressContextType | null>(null);
 
 function userDataProvider({ children }: { children: ReactNode}) {
-    const [name, setName] = useState("");
+    const { userData, setUserData } = useUserData;
 
 
     return (
-        <>
-        <NameContext.Provider value={{name, setName}}>
+        <UserDataContext.Provider value={{ userData, setUserData }}>
             {children}
-        </NameContext.Provider>
-
-
-        </>
-    )
+        </UserDataContext.Provider>
+    );
 }
 
 export default userDataProvider;
