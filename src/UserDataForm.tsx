@@ -14,7 +14,7 @@ function userDataForm() {
         e.preventDefault();
         nameContext?.setName(localName);
         ageContext?.setAge(localAge);
-        addressContext?.setAddress(localAddress)
+        addressContext?.setAddress(localAddress);
         setLocalName("");
         setLocalAge("");
         setLocalAddress("");

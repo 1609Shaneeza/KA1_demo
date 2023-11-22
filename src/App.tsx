@@ -1,16 +1,19 @@
-import userDataForm from "./UserDataForm"
-import userDataProvider from "./UserDataProvider"
-import userDataDisplay from "./UserDataDisplay"
+import UserDataDisplay from "./UserDataDisplay";
+import UserDataProvider from "./UserDataProvider";
+import UserDataForm from "./UserDataForm";
 
 function App() {
 return(
     <>
     <h2>Hello World</h2>
-    <userDataProvider>
-        
-    </userDataProvider>
+    <UserDataProvider>
+        <div className="bordered">
+            <UserDataForm/>
+        </div>
+    </UserDataProvider>
+
     </>
-)
+);
 
 }
 
