@@ -1,12 +1,14 @@
-.bordered{
+.bordered1{
     font-size: 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: aliceblue;
+    border: 0.5px solid black;
 }
 .box{
     background-color: aliceblue;
     font-size: 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 0.5px solid black;
 }
 
 button{

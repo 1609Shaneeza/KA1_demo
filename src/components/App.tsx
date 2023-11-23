@@ -9,7 +9,7 @@ return(
     <div className="box">
     <h2>Hello World</h2>
     <UserDataProvider>
-        <div className="bordered">
+        <div className="bordered1">
             <UserDataForm/>
         </div>
         <div className="bordered">
