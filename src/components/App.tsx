@@ -1,5 +1,7 @@
 import UserDataProvider from "./UserDataProvider";
 import UserDataForm from "./UserDataForm";
+import UserDataDisplay from "./UserDataDisplay";
+import ClearStorageButton from "./ClearStorageButton";
 
 function App() {
 return(
@@ -9,6 +11,12 @@ return(
     <UserDataProvider>
         <div className="bordered">
             <UserDataForm/>
+        </div>
+        <div className="bordered">
+            <UserDataDisplay />
+        </div>
+        <div className="bordered">
+            <ClearStorageButton />
         </div>
     </UserDataProvider>
     </div>
