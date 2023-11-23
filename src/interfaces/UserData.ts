@@ -1,6 +1,6 @@
 interface UserData {
     name:string;
-    age:string;
+    age:number;
     address:string;
 }
 

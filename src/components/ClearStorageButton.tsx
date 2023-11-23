@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { UserDataContext } from "./UserDataProvider";
+import { UserContext } from "./UserDataProvider";
 
 
 function ClearStorageButton() {
-    const userDataContext = useContext(UserDataContext);
+    const userDataContext = useContext(UserContext);
 
     const handleClick = () => {
         userDataContext?.setUserData({});
@@ -11,7 +11,7 @@ function ClearStorageButton() {
 
     return(
         <button type="button" onClick={handleClick}>
-            Clear Local Storage
+            Clear Storage
         </button>
     );
 }

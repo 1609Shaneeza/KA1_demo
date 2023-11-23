@@ -2,21 +2,21 @@ import { useState } from "react";
 import UserData from "../interfaces/UserData";
 
 function useUserData() {
-    const userDataString = localStorage.getItem("userData");
-    const userDataObject = userDataString
-    ? JSON.parse(userDataString)
-    : {name: "", age:0, address:""};
-    const [userData, setUserData] = useState(userDataObject);
+    const UsersData = localStorage.getItem("userData");
+    const userDataObject = UsersData
+    ?JSON.parse(UsersData): {userName: "", userAge: 0, userAddress: ""};
+    const[userData, setUserData] = useState(userDataObject);
 
-    const saveUserData = (userData: UserData | {}) => {
-        localStorage.setItem("userData", JSON.stringify(userData))
+    const saveData = (userData: UserData | {}) => {
+        localStorage.setItem("userData", JSON.stringify(userData));
         setUserData(userData);
     };
 
-    return {
+    return{
         userData,
-        setUserData: saveUserData,
+        setUserData: saveData,
     };
+
 }
 
 export default useUserData;

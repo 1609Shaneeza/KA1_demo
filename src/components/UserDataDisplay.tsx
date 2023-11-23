@@ -1,15 +1,15 @@
 import { useContext } from "react";
-import { UserDataContext } from "./UserDataProvider";
+import { UserContext } from "./UserDataProvider";
 
 function userDataDisplay() {
-    const nameContext = useContext(UserDataContext);
+    const dataContext = useContext(UserContext);
 
     return(
         <>
         <ul>
-            <li>Name: {nameContext?.userData?.name}</li>
-            <li>Age: {nameContext?.userData?.age}</li>
-            <li>Address: {nameContext?.userData?.address}</li>
+            <li>Name: {dataContext?.userData?.name}</li>
+            <li>Age: {dataContext?.userData?.age}</li>
+            <li>Address: {dataContext?.userData?.address}</li>
         </ul>
         </>
     );
