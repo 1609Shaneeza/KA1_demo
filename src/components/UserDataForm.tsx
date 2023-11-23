@@ -1,23 +1,24 @@
 import { FormEvent, useContext, useState } from "react";
-import { AddressContext, AgeContext, NameContext } from "./UserDataProvider";
+import { UserDataContext } from "./UserDataProvider";
 
 
 function userDataForm() {
-    const [localName, setLocalName] = useState("");
-    const [localAge, setLocalAge] = useState("");
-    const [localAddress, setLocalAddress] = useState("");
-    const nameContext = useContext(NameContext);
-    const ageContext = useContext(AgeContext);
-    const addressContext = useContext(AddressContext);
+    const userDataContext = useContext(UserDataContext);
+    const [name, setName] = useState("");
+    const [age, setAge] = useState("");
+    const [address, setAddress] = useState("");
+
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-        nameContext?.setName(localName);
-        ageContext?.setAge(localAge);
-        addressContext?.setAddress(localAddress);
-        setLocalName("");
-        setLocalAge("");
-        setLocalAddress("");
+        userDataContext?.setUserData({
+            name,
+            age,
+            address,
+          });
+        setName("");
+        setAge("");
+        setAddress("");
     };
 
     return(
@@ -27,31 +28,31 @@ function userDataForm() {
             <input type="text" 
             id="name" 
             autoComplete="off" 
-            onChange={(e) => setLocalName(e.target.value)} 
-            value = {localName}
+            onChange={(e) => setName(e.target.value)} 
+            value = {name}
             required
             />
             <label htmlFor="Age">Age:</label>
             <input type="text" 
             id="Age" 
             autoComplete="off" 
-            onChange={(e) => setLocalAge(e.target.value)} 
-            value = {localAge}
+            onChange={(e) => setAge(e.target.value)} 
+            value = {age}
             required
             />
             <label htmlFor="Address">Address:</label>
             <input type="text" 
             id="name" 
             autoComplete="off" 
-            onChange={(e) => setLocalAddress(e.target.value)} 
-            value = {localAddress}
+            onChange={(e) => setAddress(e.target.value)} 
+            value = {address}
             required
             />
             <button>Submit</button>  
         </form>
-        <p>Name: {localName}</p>
-        <p>Age: {localAge}</p>
-        <p>Address: {localAddress}</p>
+        <p>Name: {name}</p>
+        <p>Age: {age}</p>
+        <p>Address: {address}</p>
         </>
     );
 }
