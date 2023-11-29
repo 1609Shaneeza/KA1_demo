@@ -3,18 +3,18 @@ import { UserContext } from "./UserDataProvider";
 
 
 function userDataForm() {
-    const userContext = useContext(UserContext);
-    const [localName, setLocalName] = useState("");
-    const [localAge, setLocalAge] = useState("");
-    const [localAddress, setLocalAddress] = useState("");
+    const DataContext = useContext(UserContext);
+    const [name, setLocalName] = useState("");
+    const [age, setLocalAge] = useState("");
+    const [address, setLocalAddress] = useState("");
 
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-        userContext?.setUserData({
-            localName,
-            localAge,
-            localAddress,
+        DataContext?.setUserData({
+            name,
+            age,
+            address,
           });
         setLocalName("");
         setLocalAge("");
@@ -29,7 +29,7 @@ function userDataForm() {
             id="name" 
             autoComplete="off" 
             onChange={(e) => setLocalName(e.target.value)} 
-            value = {localName}
+            value = {name}
             required
             />
             <label htmlFor="Age">Age:</label>
@@ -37,7 +37,7 @@ function userDataForm() {
             id="Age" 
             autoComplete="off" 
             onChange={(e) => setLocalAge(e.target.value)} 
-            value = {localAge}
+            value = {age}
             required
             />
             <label htmlFor="Address">Address:</label>
@@ -45,14 +45,14 @@ function userDataForm() {
             id="name" 
             autoComplete="off" 
             onChange={(e) => setLocalAddress(e.target.value)} 
-            value = {localAddress}
+            value = {address}
             required
             />
             <button>Submit</button>  
         </form>
-        <p>Name: {localName}</p>
-        <p>Age: {localAge}</p>
-        <p>Address: {localAddress}</p>
+        <p>Name: {name}</p>
+        <p>Age: {age}</p>
+        <p>Address: {address}</p>
         </>
     );
 }
