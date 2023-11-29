@@ -1,26 +1,20 @@
-import UserDataProvider from "./UserDataProvider";
-import UserDataForm from "./UserDataForm";
-import UserDataDisplay from "./UserDataDisplay";
-import ClearStorageButton from "./ClearStorageButton";
+import Navbar from "./Icons";
+import Images from "./Images";
 
 function App() {
 return(
     <>
-    <div className="box">
-    <h2>Hello World</h2>
-    <UserDataProvider>
-        <div className="bordered">
-            <UserDataForm/>
-        </div>
-        <div className="bordered">
-            <UserDataDisplay />
-        </div>
-        <div className="bordered">
-            <ClearStorageButton />
-        </div>
-    </UserDataProvider>
-    </div>
-
+    <h1> My Website</h1>
+    <br></br>
+    <br></br>
+    <br></br>
+    <Navbar />
+    <br></br>
+    <br></br>
+    <br></br>
+    <Images />
+    
+    
     </>
 );
 
