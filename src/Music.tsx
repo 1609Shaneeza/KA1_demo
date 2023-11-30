@@ -14,7 +14,7 @@ function Music() {
         const options = {
             method: 'GET',
             url: 'https://dog.ceo/api/breeds/image/random',
-
+ 
         };
 
         try {
