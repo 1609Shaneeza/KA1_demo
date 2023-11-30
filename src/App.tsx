@@ -1,11 +1,17 @@
-import Music from "./Music";
+import Navbar from './Components/Navbar';
+import ParagraphPair from './Components/ParagraphPair';
+
+
 function App() {
+
 
   return (
     <>
-    <Music/>
+    <Navbar/>
+    < ParagraphPair />
+
     </>
   )
 }
 
-export default App
+export default App;
