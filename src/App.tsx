@@ -1,4 +1,4 @@
-import { BrowserRouter as Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import CookieClicker from "./Components/CookieClicker";
 import Homepage from "./Components/HomePage";
 import Temperature from "./Components/TempChecker";
