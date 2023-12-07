@@ -9,7 +9,7 @@ function DoggImage() {
         <>
         <div className="container text-center">
   <div className="row">
-    <div className="col-3">
+    <div className="col-3 ">
       <img src={DogImage} width = "100%"/>
     </div>
     <div className="col-7">
